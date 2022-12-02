@@ -199,13 +199,8 @@ int and_intro(int line, int l1, int l2, char prefix1[], char prefix2[], char * b
     return 0;
 }
 int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
-    //printf("hi\n");
     int a = strlen(buffer2[line]);
     int b = strlen(buffer2[l]);
-    //printf(":%s\n",((char *) *(buffer2+l))+1);
-    //printf("%d,%d\n",line,l);
-    //printf(":%s\n",buffer2[line]);
-    //printf(":%s\n",buffer2[l]);
     if (mode == '1'){
         if(!strncmp(buffer2[l]+1,buffer2[line],a))
             return 1;
@@ -236,11 +231,35 @@ int imp_elim(int line,int l,int l2, char * buffer2[], char * buffer[]){
         if (and_elim('1',l2,l,buffer2,buffer)){
             return 1;
         }
+        else
+            return 0;
     }
     else
         return 0;
 }
-int modus_tollens(){}
+int modus_tollens(int line, int l, int l2,char * buffer2[],char * buffer[]){
+    if (buffer2[line][0]=='~' && buffer2[l][0] == '>' && buffer2[l2][0] == '~') {
+        int p = strlen(buffer2[line]) -1;
+        int pp = strlen(buffer2[l2]) -1;
+        int np = strlen(buffer2[l]);
+        if (!strncmp(buffer2[line]+1,buffer2[l]+1,p)){
+            char str1[pp+1];
+            char str2[np+1];
+            strcpy(str1,buffer2[l2]+1);
+            strcpy(str2,buffer2[l]);
+            reverse(str1);
+            reverse(str2);
+            if(!strncmp(str1,str2,pp))
+                return 1;
+            else 
+                return 0;
+        }
+        else
+            return 0;
+    }
+    else
+        return 0;
+}
 
 int ln;
 
@@ -296,6 +315,8 @@ int checkline(int i, char * buffer[], char * buffer2[]){
   }
   else if (buffer[i][index]=='>' && buffer[i][index+1]=='e')
     r = imp_elim(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49,buffer2,buffer) && (buffer2[(int) buffer[i][index+3] -49][0]=='>');
+  else if (buffer[i][index]=='M' && buffer[i][index+1]=='T')
+    r = modus_tollens(i,(int) buffer[i][index+3] -49, (int) buffer[i][index+5] -49,buffer2,buffer);
   else
     r = 3;
   return r;
