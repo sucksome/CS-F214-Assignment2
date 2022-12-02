@@ -288,20 +288,42 @@ int checkline(int i, char * buffer[], char * buffer2[]){
 
   if (buffer[i][index]=='P')
     return 1;
-
-  char infix1[index2+1], prefix1[index2+1], stack1[index2+1];
-  for (int t = 0; t < index2; t++){
-      infix1[t]=buffer[i][t];
+  int cou=0,cou2=0;
+  for (int lol = 0; lol < index-1; lol++){
+      if(buffer[i][lol]=='(' || buffer[i][lol]==')'){
+          if(lol<index2)
+              cou++;
+          else if (lol>index2)
+              cou2++;
+      }
   }
-  infix1[index2]='\0';
+  char infix1[index2+1-cou], prefix1[index2+1-cou], stack1[index2+1-cou];
+  for (int t = 0, tt = 0; t < index2-cou; t++){
+      if(buffer[i][tt]!='(' && buffer[i][tt]!=')'){
+          infix1[t]=buffer[i][tt];
+          tt++;
+      }
+      else {
+          t--;
+          tt++;
+      }
 
-  char infix2[index-index2-1], prefix2[index-index2-1], stack2[index-index2-1];
-  for (int t = 0; t < index-index2-2; t++){
+  }
+  infix1[index2-cou]='\0';
+
+  char infix2[index-index2-1-cou2], prefix2[index-index2-1-cou2], stack2[index-index2-1-cou2];
+  for (int t = 0, tt = 0; t < index-index2-2-cou2; t++){
+      if (buffer[i][index+tt+1]==')' || buffer[i][index+tt+1]==')'){
+          t--;
+          tt++;
+      }
+      else {
       infix2[t]=buffer[i][index2+t+1];
-  }
-  infix2[index-index2-2]='\0';
-  int len1 = infixToPrefix(infix1,stack1,prefix1,index2);
-  int len2 = infixToPrefix(infix2,stack2,prefix2,index-2-index2);
+      tt++;   
+  }}
+  infix2[index-index2-2-cou2]='\0';
+  int len1 = infixToPrefix(infix1,stack1,prefix1,index2-cou);
+  int len2 = infixToPrefix(infix2,stack2,prefix2,index-2-index2-cou2);
   int r;
   if (buffer[i][index2]=='*' && buffer[i][index]=='*' && buffer[i][index+1]=='i')
     r = and_intro(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49, prefix1, prefix2, buffer2);
