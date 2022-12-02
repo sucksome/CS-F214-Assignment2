@@ -198,7 +198,33 @@ int and_intro(int line, int l1, int l2, char prefix1[], char prefix2[], char * b
     }
     return 0;
 }
-int and_elim(){}
+int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
+    //printf("hi\n");
+    int a = strlen(buffer2[line]);
+    int b = strlen(buffer2[l]);
+    //printf(":%s\n",((char *) *(buffer2+l))+1);
+    //printf("%d,%d\n",line,l);
+    //printf(":%s\n",buffer2[line]);
+    //printf(":%s\n",buffer2[l]);
+    if (mode == '1'){
+        if(!strncmp(buffer2[l]+1,buffer2[line],a))
+            return 1;
+        else 
+            return 0;
+    }
+    else {
+        char str1[a+1];
+        char str2[b+1];
+        strcpy(str1,buffer2[line]);
+        strcpy(str2,buffer2[l]);
+        reverse(str1);
+        reverse(str2);
+        if(!strncmp(str1,str2,a))
+            return 1;
+        else 
+            return 0;
+    }
+}
 int or_intro(){}
 int imp_elim(){}
 
@@ -247,7 +273,7 @@ int checkline(int i, char * buffer[], char * buffer2[]){
   if (buffer[i][index]=='*' && buffer[i][index+1]=='i')
     r = and_intro(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49, prefix1, prefix2, buffer2);
   else if (buffer[i][index]=='*' && buffer[i][index+1]=='e')
-    return and_elim();
+    r = and_elim(buffer[i][index+2],i,(int) buffer[i][index+4] -49,buffer2,buffer);
   else if (buffer[i][index]=='+' && buffer[i][index+1]=='i')
     return or_intro();
   else if (buffer[i][index]=='>' && buffer[i][index+1]=='e')
