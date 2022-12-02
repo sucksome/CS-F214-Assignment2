@@ -225,7 +225,12 @@ int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
             return 0;
     }
 }
-int or_intro(){}
+int or_intro(int l, char * buffer2[], char prefix[]){
+    if (!strcmp(prefix,buffer2[l]))
+        return 1;
+    else 
+        return 0;
+}
 int imp_elim(){}
 
 int ln;
@@ -274,8 +279,12 @@ int checkline(int i, char * buffer[], char * buffer2[]){
     r = and_intro(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49, prefix1, prefix2, buffer2);
   else if (buffer[i][index]=='*' && buffer[i][index+1]=='e')
     r = and_elim(buffer[i][index+2],i,(int) buffer[i][index+4] -49,buffer2,buffer);
-  else if (buffer[i][index]=='+' && buffer[i][index+1]=='i')
-    return or_intro();
+  else if (buffer[i][index]=='+' && buffer[i][index+1]=='i'){
+      if (buffer[i][index+2]=='1')
+          r = or_intro((int) buffer[i][index+4] -49,buffer2,prefix1);
+      else
+          r = or_intro((int) buffer[i][index+4] -49,buffer2,prefix2);
+  }
   else if (buffer[i][index]=='>' && buffer[i][index+1]=='e')
     return imp_elim();
   else
