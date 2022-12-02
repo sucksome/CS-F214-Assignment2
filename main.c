@@ -391,5 +391,10 @@ int main(){
     printf("Valid Proof\n");
   else if (result == 3)
     printf("Invalid Proof due to undefined proof rule at Line %d\n",ln+1);
+  for (int y = 0; y < n; y++){
+      free(buffer[y]);
+      free(buffer2[y]);
+  }
+  printf("**\tMemory Freed\t**\n");
   return 0;
 }
