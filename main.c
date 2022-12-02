@@ -290,37 +290,29 @@ int checkline(int i, char * buffer[], char * buffer2[]){
     return 1;
   int cou=0,cou2=0;
   for (int lol = 0; lol < index-1; lol++){
-      if(buffer[i][lol]=='(' || buffer[i][lol]==')'){
+      if(buffer[i][lol]=='('){
           if(lol<index2)
               cou++;
+          else if (lol>index2)
+              cou2--;
+      }
+      else if (buffer[i][lol]==')'){
+          if(lol<index2)
+              cou--;
           else if (lol>index2)
               cou2++;
       }
   }
   char infix1[index2+1-cou], prefix1[index2+1-cou], stack1[index2+1-cou];
-  for (int t = 0, tt = 0; t < index2-cou; t++){
-      if(buffer[i][tt]!='(' && buffer[i][tt]!=')'){
-          infix1[t]=buffer[i][tt];
-          tt++;
-      }
-      else {
-          t--;
-          tt++;
-      }
-
+  for (int t = cou; t < index2; t++){
+          infix1[t-cou]=buffer[i][t];
   }
   infix1[index2-cou]='\0';
 
   char infix2[index-index2-1-cou2], prefix2[index-index2-1-cou2], stack2[index-index2-1-cou2];
-  for (int t = 0, tt = 0; t < index-index2-2-cou2; t++){
-      if (buffer[i][index+tt+1]==')' || buffer[i][index+tt+1]==')'){
-          t--;
-          tt++;
-      }
-      else {
+  for (int t = 0; t < index-index2-2-cou2; t++){
       infix2[t]=buffer[i][index2+t+1];
-      tt++;   
-  }}
+  }
   infix2[index-index2-2-cou2]='\0';
   int len1 = infixToPrefix(infix1,stack1,prefix1,index2-cou);
   int len2 = infixToPrefix(infix2,stack2,prefix2,index-2-index2-cou2);
