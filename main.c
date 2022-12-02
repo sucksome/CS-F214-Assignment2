@@ -231,7 +231,16 @@ int or_intro(int l, char * buffer2[], char prefix[]){
     else 
         return 0;
 }
-int imp_elim(){}
+int imp_elim(int line,int l,int l2, char * buffer2[], char * buffer[]){
+    if(and_elim('2',line,l,buffer2,buffer)){
+        if (and_elim('1',l2,l,buffer2,buffer)){
+            return 1;
+        }
+    }
+    else
+        return 0;
+}
+int modus_tollens(){}
 
 int ln;
 
@@ -275,18 +284,18 @@ int checkline(int i, char * buffer[], char * buffer2[]){
   int len1 = infixToPrefix(infix1,stack1,prefix1,index2);
   int len2 = infixToPrefix(infix2,stack2,prefix2,index-2-index2);
   int r;
-  if (buffer[i][index]=='*' && buffer[i][index+1]=='i')
+  if (buffer[i][index2]=='*' && buffer[i][index]=='*' && buffer[i][index+1]=='i')
     r = and_intro(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49, prefix1, prefix2, buffer2);
   else if (buffer[i][index]=='*' && buffer[i][index+1]=='e')
-    r = and_elim(buffer[i][index+2],i,(int) buffer[i][index+4] -49,buffer2,buffer);
-  else if (buffer[i][index]=='+' && buffer[i][index+1]=='i'){
+    r = and_elim(buffer[i][index+2],i,(int) buffer[i][index+4] -49,buffer2,buffer) && (buffer2[ (int) buffer[i][index+4] -49][0]=='*');
+  else if (buffer[i][index2]=='+' && buffer[i][index]=='+' && buffer[i][index+1]=='i'){
       if (buffer[i][index+2]=='1')
           r = or_intro((int) buffer[i][index+4] -49,buffer2,prefix1);
       else
           r = or_intro((int) buffer[i][index+4] -49,buffer2,prefix2);
   }
   else if (buffer[i][index]=='>' && buffer[i][index+1]=='e')
-    return imp_elim();
+    r = imp_elim(i,(int) buffer[i][index+3] -49,(int) buffer[i][index+5] -49,buffer2,buffer) && (buffer2[(int) buffer[i][index+3] -49][0]=='>');
   else
     r = 3;
   return r;
