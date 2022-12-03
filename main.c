@@ -5,38 +5,22 @@
 
 int top = -1;
 
-// checking if the stack is full
-/** @brief Definition of isFull() function
- * @return Whether or not the stack is full
- */
 int isFull(int lenInfix) {
     if(top == lenInfix - 1) return 1;
     else return 0;
 } 
 
-// checking if the stack is empty
-/** @brief Definition of isEmpty() function
- * @return Whether or not the stack is empty
- */
 int isEmpty() {
     if(top == -1) return 1;
     else return 0; 
 }
 
-// push function which inserts value in the stack and increments top
-/** @brief Definition of push() function
- * @return Void
- */
 void push(char item,int lenInfix,char * stack) {
     if (isFull(lenInfix)) return; 
 	top++;
 	stack[top] = item;
 }
 
-// pop function which removes an item from the stack and decrements top 
-/** @brief Definition of pop() function
- * @return Pops the uppermost element of the stack if it is not empty
- */
 int pop(char * stack) { 
     if (isEmpty()) return INT_MIN; 
         
@@ -44,26 +28,15 @@ int pop(char * stack) {
     return stack[top--]; 
 } 
 
-/** @brief Definition of peek() function
- * @return Returns the topmost element of the stack if it is not empty
- */
 int peek(char * stack){ 
     if (isEmpty()) return INT_MIN; 
     return stack[top];
 } 
 
-/** @brief Definition of checkIfOperand() function
- * @return Whether or not the character is a propositional atom
- */
-// a function to check if the given character is a propositional atom 
 int checkIfOperand(char ch) {
     return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
 } 
 
-/** @brief Definition of priority() function
- * @return Returns a priority value depending on the operator.
- */
-// priority function to compare priority. It returns a larger value for a higher priority operator   
 int priority(char ch) 
 { 
     switch(ch) {
@@ -91,10 +64,6 @@ int priority(char ch)
     return -1; 
 }
 
-/** @brief Definition of getPostfix() function
- * 
- */
-// getPostfix function to convert an infix expression to a postfix expression
 int getPostfix(char* expression, char * stack, int lenInfix) 
 { 
     int i, j;
@@ -130,10 +99,6 @@ int getPostfix(char* expression, char * stack, int lenInfix)
     
 }
 
-/** @brief Definition of reverse() function
- * @return Void
- */
-// a function to reverse a string
 void reverse(char *exp){
 
     int size = strlen(exp);
@@ -150,9 +115,6 @@ void reverse(char *exp){
     strcpy(exp,temp);
 }
 
-/** @brief Definition of brackets() function
- * @return Void
- */
 // a function to swap brackets
 void brackets(char* exp){
     int i = 0;
@@ -166,11 +128,6 @@ void brackets(char* exp){
     }
 }
 
-// the function to convert the infix expression into a prefix expression
-
-/** @brief Definition of infixToPrefix() function
- *  @return The length of the infix expression
- */
 int infixToPrefix(char *exp, char * stack, char * prefix, int lenInfix)
 {
 
@@ -284,7 +241,6 @@ int checkline(int i, char * buffer[], char * buffer2[]){
   index++;
 
   // printf("\n%c at index %d\n",buffer[i][index2],index2);
-  
 
   if (buffer[i][index]=='P')
     return 1;
@@ -354,6 +310,7 @@ int main(){
   getchar();
 
   char * buffer[n];  // declaring buffer to store the lines in proof
+  char * buffer2[n];
 
   // loop to store each line of the proof 
 
@@ -361,14 +318,11 @@ int main(){
     int i = 0, j = 10;
     char ch;
     char * temp;
-    temp = (char *) malloc(10*sizeof(char));
-
+    temp= (char *) malloc(10*sizeof(char));
+    int inx = 0;
     while((ch=getchar())!='\n'){ 
         if(i>j-2){ 
-
-            // Memory realloc if we're falling short
-
-            temp = realloc(temp,(i+10)*sizeof(char)); 
+            temp = realloc(temp,(i+10)*sizeof(char));       // Memory realloc if we're falling short 
             j = i+10; 
         }
         if(ch!='\b'){ 
@@ -377,27 +331,19 @@ int main(){
         }
         else 
             i--;    // A backspace character was used
-      }
-      temp[i]='\0';
-      buffer[line] = temp;
+        if (ch =='/' && inx==0){
+            inx=i-1;
+        }
+    }
+    temp[i]='\0';
+    buffer[line] = temp;
+    char stk[inx+1], inf[inx+1];
+    strncpy(inf,temp,inx);
+    inf[inx]='\0';
+    char * prf = (char *) malloc((inx+1)*sizeof(char));
+    int lex = infixToPrefix(inf,stk,prf,inx+1);
+    buffer2[line]=prf;
   }
-
-  char * buffer2[n];
-  for (int line = 0; line < n; line++){
-      int inx = 0;
-      while (buffer[line][inx]!='/'){
-          inx++;
-      }
-      char inf[inx+1], stk[inx+1];
-      char * prf = (char *) malloc((inx+1)*sizeof(char));
-      for (int h = 0; h < inx; h++){
-          inf[h]=buffer[line][h];
-      }
-      inf[inx]='\0';
-      int lex = infixToPrefix(inf,stk,prf,inx+1);
-      buffer2[line]=prf;
-  }
-
   int result = check(buffer,n,buffer2);
   if (result == 0)
     printf("Invalid Proof\n");
