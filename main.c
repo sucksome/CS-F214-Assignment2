@@ -1,4 +1,4 @@
-// A simple a tool for verifying whether a certain proof of a given sequent is valid or not 
+// A simple tool for verifying whether a certain proof of a given sequent is valid or not 
 
 /* -- Includes -- */
 
