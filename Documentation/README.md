@@ -42,10 +42,6 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 
 ## Plans to Extend:
 
-## Code Analysis:
- 
-## Profiling:
-
 ## Specifications:
 - Architecture:            x86_64
 - CPU op-mode(s):          32-bit, 64-bit
@@ -73,6 +69,8 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 - RAM:                     20 GiB
 
 ## Problems we faced and Bugs:
+
+***
 
 We found the assignment really engaging and it was really fun to work in a team environment.
 This assignment also helped deepen our insight into theoretical concepts behind propositional logic and proof verification.

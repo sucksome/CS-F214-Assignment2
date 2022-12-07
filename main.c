@@ -17,6 +17,10 @@
 
 int ln;
 
+/** @brief Definition of and_intro() function
+ *  \n Checks whether or not the and introduction line in the proof is valid.
+ */
+
 int checkline(int i, char * buffer[], char * buffer2[]){
   int index = 0, index2 = 0, temp = 0, min = 10;
   while(buffer[i][index]!='/'){
@@ -36,8 +40,6 @@ int checkline(int i, char * buffer[], char * buffer2[]){
     }
   }
   index++;
-
-  // printf("\n%c at index %d\n",buffer[i][index2],index2);
 
   if (buffer[i][index]=='P')
     return 1;
@@ -102,7 +104,11 @@ int check(char * buffer[],int n, char * buffer2[]){
 
 int main(){
   int n;      // number of lines in the proof
-  printf("Enter number of statements: ");
+  
+  // A cute welcome message
+  printf("───▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄───\n───█▒▒░░░░░░░░░▒▒█───\n────█░░█░░░░░█░░█────\n─▄▄──█░░░▀█▀░░░█──▄▄─\n█░░█─▀▄░░░░░░░▄▀─█░░█\n█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█\n");
+  
+  printf("Enter the number of statements: ");
   scanf("%d",&n);
   getchar();
 
@@ -143,9 +149,9 @@ int main(){
   }
   int result = check(buffer,n,buffer2);
   if (result == 0)
-    printf("Invalid Proof\n");
+    printf("Invalid Proof, done doggo a sad\n                \\ \n                 \\ \n                /^-----^\\ \n                V  o o  V\n                 |  Y  |\n                  \\ ⌓ /\n                  / - \\ \n                  |    \\ \n                  |     \\     ) \n                  || (___\\====\n");
   else if (result == 1)
-    printf("Valid Proof\n");
+    printf("Valid Proof, done doggo a happy\n                \\ \n                 \\ \n                /^-----^\\ \n                V  o o  V\n                 |  Y  |\n                  \\ ◡ /\n                  / - \\ \n                  |    \\ \n                  |     \\     ) \n                  || (___\\====\n");
   else if (result == 3)
     printf("Invalid Proof due to undefined proof rule at Line %d\n",ln+1);
   for (int y = 0; y < n; y++){
