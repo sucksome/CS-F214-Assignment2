@@ -38,6 +38,28 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 
 ## Code Design:
 
+As seen in the flow chart above, after control flow passes to checkline(), we check for each line's correctness successively. If any line is found false, proof is deemed invalid, else valid. The checkline function() works as follows:
+* Calculates index for the operator
+* It makes temporary prefix buffers for both operands
+* These are passed as deemed necessary to these functions:
+
+  * and_elim()
+  Depending on where it is AND elimination -1 or 2 , we compare the prefix and postfix expressions respectively for the appropriate length.
+
+  * and_intro()
+  Compares prefix1 and prefix2 (prefixes of the respective operands) with the prefix of the specified line argument.
+
+  * imp_elim()
+  * It uses and_elim() to compare the postfix of the argument with the postfix of the implication for the appropriate length and prefix of the first operand of the implication with the other suitable line argument given.  
+
+  * modus_tollens()
+  * It works very similar to the imp_elim(), major differences are that negation is used and the comparison is changed, between given line and prefix of first line argument, and postfixes of second line and first line arguments for the appropriate length while also taking negation into account.
+
+  * or_intro()
+  * It checks the prefix of the specified operand with the prefix of the given line argument.
+
+We also have additional checks in place after returning from these functions, to finally pass a value to check().
+
 ## Example Output:
 ![Sample Output 1] (sampleOutput1.jpeg)
 ![Sample Output 2] (sampleOutput2.jpeg)

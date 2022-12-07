@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['peek_13',['peek',['../infixToPrefix_8c.html#a75c2f4b4a06e51eb162571882f33f3fa',1,'infixToPrefix.c']]],
-  ['pop_14',['pop',['../infixToPrefix_8c.html#ae636d8b2c9fb2f14266470a27b591f27',1,'infixToPrefix.c']]],
-  ['priority_15',['priority',['../infixToPrefix_8c.html#abe3a48d1c23d6069348ef4ed570c7afd',1,'infixToPrefix.c']]],
-  ['push_16',['push',['../infixToPrefix_8c.html#a04860271118e13873f24855fe077bd20',1,'infixToPrefix.c']]]
+  ['modus_5ftollens_0',['modus_tollens',['../modus__tollens_8c.html#ab3c91b84990cae483e06ee41ae00349e',1,'modus_tollens(int line, int l, int l2, char *buffer2[], char *buffer[]):&#160;modus_tollens.c'],['../modus__tollens_8h.html#ab3c91b84990cae483e06ee41ae00349e',1,'modus_tollens(int line, int l, int l2, char *buffer2[], char *buffer[]):&#160;modus_tollens.c']]],
+  ['modus_5ftollens_2ec_1',['modus_tollens.c',['../modus__tollens_8c.html',1,'']]],
+  ['modus_5ftollens_2eh_2',['modus_tollens.h',['../modus__tollens_8h.html',1,'']]]
 ];
