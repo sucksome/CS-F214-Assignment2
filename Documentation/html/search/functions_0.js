@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['brackets_0',['brackets',['../infixToPrefix_8c.html#a105d1bc18250addc8879dacb085d6344',1,'infixToPrefix.c']]]
+  ['and_5felim_21',['and_elim',['../and__elim_8c.html#a99dfef085d5c3b6c0c3e00536252aacd',1,'and_elim.c']]]
 ];

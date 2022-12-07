@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['peek_0',['peek',['../infixToPrefix_8c.html#a75c2f4b4a06e51eb162571882f33f3fa',1,'infixToPrefix.c']]],
-  ['pop_1',['pop',['../infixToPrefix_8c.html#ae636d8b2c9fb2f14266470a27b591f27',1,'infixToPrefix.c']]],
-  ['priority_2',['priority',['../infixToPrefix_8c.html#abe3a48d1c23d6069348ef4ed570c7afd',1,'infixToPrefix.c']]],
-  ['push_3',['push',['../infixToPrefix_8c.html#a04860271118e13873f24855fe077bd20',1,'infixToPrefix.c']]]
+  ['infixtoprefix_8',['infixToPrefix',['../infixToPrefix_8c.html#a19c7f3bcadb0200f83e518a43860f549',1,'infixToPrefix(char *exp, char *stack, char *prefix, int lenInfix):&#160;infixToPrefix.c'],['../infixToPrefix_8h.html#a19c7f3bcadb0200f83e518a43860f549',1,'infixToPrefix(char *exp, char *stack, char *prefix, int lenInfix):&#160;infixToPrefix.c']]],
+  ['infixtoprefix_2ec_9',['infixToPrefix.c',['../infixToPrefix_8c.html',1,'']]],
+  ['infixtoprefix_2eh_10',['infixToPrefix.h',['../infixToPrefix_8h.html',1,'']]],
+  ['isempty_11',['isEmpty',['../infixToPrefix_8c.html#a653c98c68c558505b75b04c44b7c838e',1,'infixToPrefix.c']]],
+  ['isfull_12',['isFull',['../infixToPrefix_8c.html#a234616ffb4f8d0cce15f997dfd214875',1,'infixToPrefix.c']]]
 ];

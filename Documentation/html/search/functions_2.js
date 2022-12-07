@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getpostfix_0',['getPostfix',['../infixToPrefix_8c.html#af7637cf6869814fcb2102111b17ba4ab',1,'infixToPrefix.c']]]
+  ['checkifoperand_23',['checkIfOperand',['../infixToPrefix_8c.html#a478eeb6b55e882be5e5f4911329e713d',1,'infixToPrefix.c']]]
 ];
