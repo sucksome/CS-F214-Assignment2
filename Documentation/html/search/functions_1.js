@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['checkifoperand_0',['checkIfOperand',['../infixToPrefix_8c.html#a478eeb6b55e882be5e5f4911329e713d',1,'infixToPrefix.c']]]
+  ['brackets_22',['brackets',['../infixToPrefix_8c.html#a105d1bc18250addc8879dacb085d6344',1,'infixToPrefix.c']]]
 ];

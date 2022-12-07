@@ -34,6 +34,7 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 
 ```
 ## Algorithm:
+![A Flow Chart of the Algorithm] (flow.png)
 
 ## Code Design:
 
@@ -77,4 +78,3 @@ We found the assignment really engaging and it was really fun to work in a team 
 This assignment also helped deepen our insight into theoretical concepts behind propositional logic and proof verification.
 We thank all our instructors for providing us this oppurtunity.
 
-*/

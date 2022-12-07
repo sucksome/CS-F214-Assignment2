@@ -1,6 +1,16 @@
-#include <string.h>
+/** @file and_elim.c
+ *  @brief Contains definition for checking whether the and elimination proof is valid. 
+ *  @bug No known bugs.
+ */
+
+/* -- Includes -- */
+
+#include <string.h> //For using the strlen, strncmp and strcpy functions
 #include "../Misc/inf/infixToPrefix.h"
 
+/** @brief Definition of and_elim() function
+ *  \n Checks whether or not the and elimination line in the proof is valid.
+ */
 int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
     int a = strlen(buffer2[line]);
     int b = strlen(buffer2[l]);
