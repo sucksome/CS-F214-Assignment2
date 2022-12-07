@@ -1,5 +1,8 @@
 /** @file or_intro.c
  *  @brief Contains definition for checking whether the or introduction proof line is valid. 
+ *
+ * It checks the prefix of the specified operand with the prefix of the given line argument.
+ *
  *  @bug No known bugs.
  */
 

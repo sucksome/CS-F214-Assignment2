@@ -11,6 +11,7 @@
 
 /** @brief Definition of modus_tollens() function
  *  \n Checks whether or not the Modus Tollens line in the proof is valid.
+ * \n It works very similar to the imp_elim(), major differences are that negation is used and the comparison is changed, between given line and prefix of first line argument, and postfixes of second line and first line arguments for the appropriate length while also taking negation into account.
  */
 
 int modus_tollens(int line, int l, int l2,char * buffer2[],char * buffer[]){

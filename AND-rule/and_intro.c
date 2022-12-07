@@ -9,6 +9,7 @@
 
 /** @brief Definition of and_intro() function
  *  \n Checks whether or not the and introduction line in the proof is valid.
+ * \n Compares prefix1 and prefix2 (prefixes of the respective operands) with the prefix of the specified line argument.
  */
 
 int and_intro(int line, int l1, int l2, char prefix1[], char prefix2[], char * buffer2[]){

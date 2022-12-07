@@ -9,6 +9,7 @@
 
 /** @brief Definition of imp_elim() function
  *  \n Checks whether or not the implies elimination line in the proof is valid.
+ * \n It uses and_elim() to compare the postfix of the argument with the postfix of the implication for the appropriate length and prefix of the first operand of the implication with the other suitable line argument given. 
  */
 int imp_elim(int line,int l,int l2, char * buffer2[], char * buffer[]){
     if(and_elim('2',line,l,buffer2,buffer)){

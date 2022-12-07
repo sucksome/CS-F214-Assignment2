@@ -10,6 +10,7 @@
 
 /** @brief Definition of and_elim() function
  *  \n Checks whether or not the and elimination line in the proof is valid.
+ * \n Depending on where it is AND elimination -1 or 2 , we compare the prefix and postfix expressions respectively for the appropriate length.
  */
 int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
     int a = strlen(buffer2[line]);
