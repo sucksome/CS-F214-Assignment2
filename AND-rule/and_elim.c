@@ -20,7 +20,7 @@ int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
         else 
             return 0;
     }
-    else {
+    else if (mode == '2'){
         char str1[a+1];
         char str2[b+1];
         strcpy(str1,buffer2[line]);
@@ -31,5 +31,8 @@ int and_elim(char mode, int line, int l, char * buffer2[], char * buffer[]){
             return 1;
         else 
             return 0;
+    }
+    else {
+        return 0;
     }
 }
