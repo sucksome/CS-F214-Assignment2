@@ -1,6 +1,17 @@
+/** @file modus_tollens.c
+ *  @brief Contains definition for checking whether the Modus Tollens proof line is valid. 
+ *  @bug No known bugs.
+ */
+
+/* -- Includes -- */
+
 # include <string.h>
 # include <stdio.h>
 # include "../Misc/inf/infixToPrefix.h"
+
+/** @brief Definition of modus_tollens() function
+ *  \n Checks whether or not the Modus Tollens line in the proof is valid.
+ */
 
 int modus_tollens(int line, int l, int l2,char * buffer2[],char * buffer[]){
     if (buffer2[line][0]=='~' && buffer2[l][0] == '>' && buffer2[l2][0] == '~') {

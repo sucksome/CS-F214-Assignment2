@@ -1,5 +1,5 @@
 /** @file and_elim.c
- *  @brief Contains definition for checking whether the and elimination proof is valid. 
+ *  @brief Contains definition for checking whether the and elimination proof line is valid. 
  *  @bug No known bugs.
  */
 
