@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reverse_0',['reverse',['../infixToPrefix_8c.html#abb60629bfa8355ff36df1d52d0eeb867',1,'infixToPrefix.c']]]
+  ['reverse_58',['reverse',['../infixToPrefix_8c.html#abb60629bfa8355ff36df1d52d0eeb867',1,'infixToPrefix.c']]]
 ];

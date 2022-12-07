@@ -68,7 +68,7 @@ We also have additional checks in place after returning from these functions, to
 ![Sample Output 5] (sampleOutput5.jpeg)
 
 ## Plans to Extend:
-
+In the future, additional support for features such as assumption, box proofs, and other rules not in the scope of this project may be implented in a similar fashion.
 
 ## Specifications:
 - Architecture:            x86_64
@@ -95,10 +95,6 @@ We also have additional checks in place after returning from these functions, to
   - L2:                    2 MiB (4 instances)
   - L3:                    6 MiB (1 instance)
 - RAM:                     20 GiB
-
-## Problems we faced and Bugs:
-
-***
 
 We found the assignment really engaging and it was really fun to work in a team environment.
 This assignment also helped deepen our insight into theoretical concepts behind propositional logic and proof verification.

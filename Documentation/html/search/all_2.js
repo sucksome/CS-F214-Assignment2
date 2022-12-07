@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['checkifoperand_0',['checkIfOperand',['../infixToPrefix_8c.html#a478eeb6b55e882be5e5f4911329e713d',1,'infixToPrefix.c']]],
-  ['cs_2df214_20assignment_2d2_1',['CS-F214 Assignment-2',['../index.html',1,'']]],
-  ['cs_2df214_2dassignment2_2',['CS-F214-Assignment2',['../md__home_saksham_Documents_Acads_2_1_Logic_ass_2_CS_F214_Assignment2_README.html',1,'']]]
+  ['checkifoperand_8',['checkIfOperand',['../infixToPrefix_8c.html#a478eeb6b55e882be5e5f4911329e713d',1,'infixToPrefix.c']]],
+  ['cs_2df214_20assignment_2d2_9',['CS-F214 Assignment-2',['../index.html',1,'']]],
+  ['cs_2df214_2dassignment2_10',['CS-F214-Assignment2',['../md__mnt_c_Users_prana_Documents_BITS_Projects_new_CS-F214-Assignment2_README.html',1,'']]]
 ];
