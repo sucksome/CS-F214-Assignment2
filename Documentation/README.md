@@ -43,6 +43,7 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 ![Sample Output 2] (sampleOutput2.jpeg)
 ![Sample Output 3] (sampleOutput3.jpeg)
 ![Sample Output 4] (sampleOutput4.jpeg)
+![Sample Output 5] (sampleOutput5.jpeg)
 
 ## Plans to Extend:
 
