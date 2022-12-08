@@ -33,8 +33,8 @@ gcc -o exec main.o inf.o and_intro.o and_elim.o or_intro.o imp_elim.o modus_toll
 Refer to [Documentation](Documentation) .
 
 ## Examples
-[Sample Output 1] (/Documentation/data/sampleOutput1.jpeg)
-[Sample Output 2] (/Documentation/data/sampleOutput2.jpeg)
-[Sample Output 3] (/Documentation/data/sampleOutput3.jpeg)
-[Sample Output 4] (/Documentation/data/sampleOutput4.jpeg)
-[Sample Output 5] (/Documentation/data/sampleOutput5.jpeg)
+![Sample Output 1](/Documentation/data/sampleOutput1.jpeg)
+![Sample Output 2](/Documentation/data/sampleOutput2.jpeg)
+![Sample Output 3](/Documentation/data/sampleOutput3.jpeg)
+![Sample Output 4](/Documentation/data/sampleOutput4.jpeg)
+![Sample Output 5](/Documentation/data/sampleOutput5.jpeg)
